@@ -12,7 +12,7 @@
 
 using UnityEngine;
 
-namespace MGS.UCurve
+namespace MGS.UCurve.Demo
 {
     public class BezierCurveGizmos : MonoBehaviour
     {
