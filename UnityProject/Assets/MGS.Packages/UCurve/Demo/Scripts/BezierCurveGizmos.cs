@@ -31,13 +31,13 @@ namespace MGS.UCurve.Demo
             for (float k = delta; k < 1.0f; k += delta)
             {
                 var p1 = curve.Evaluate(k);
-                Gizmos.DrawLine(p0, p1);
+                Gizmos.DrawLine(transform.TransformPoint(p0), transform.TransformPoint(p1));
                 p0 = p1;
             }
 
-            Gizmos.color = Color.grey;
-            Gizmos.DrawLine(anchor.from, anchor.inTangent);
-            Gizmos.DrawLine(anchor.to, anchor.outTangent);
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawLine(transform.TransformPoint(anchor.from), transform.TransformPoint(anchor.from + anchor.inTangent));
+            Gizmos.DrawLine(transform.TransformPoint(anchor.to), transform.TransformPoint(anchor.from + anchor.outTangent));
         }
     }
 }

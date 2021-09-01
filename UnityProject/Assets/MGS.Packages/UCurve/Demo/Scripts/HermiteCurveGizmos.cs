@@ -1,12 +1,12 @@
 ﻿/*************************************************************************
- *  Copyright (c) #COPYRIGHTYEAR# Mogoson. All rights reserved.
+ *  Copyright (c) 2021 Mogoson. All rights reserved.
  *------------------------------------------------------------------------
  *  File         :  HermiteCurveGizmos.cs
  *  Description  :  Null.
  *------------------------------------------------------------------------
  *  Author       :  Mogoson
  *  Version      :  0.1.0
- *  Date         :  #CREATEDATE#
+ *  Date         :  8/30/2021
  *  Description  :  Initial development version.
  *************************************************************************/
 
@@ -23,6 +23,7 @@ namespace MGS.UCurve.Demo
             new KeyFrame(1, Vector3.one),
             new KeyFrame(2, Vector3.right*2),
             new KeyFrame(3,new Vector3(1,1,-1)),
+            new KeyFrame(4,Vector3.zero)
         };
 
         HermiteCurve curve = new HermiteCurve();
@@ -40,7 +41,7 @@ namespace MGS.UCurve.Demo
             for (float k = frames[0].time; k < frames[frames.Length - 1].time; k += delta)
             {
                 var p1 = curve.Evaluate(k);
-                Gizmos.DrawLine(p0, p1);
+                Gizmos.DrawLine(transform.TransformPoint(p0), transform.TransformPoint(p1));
                 p0 = p1;
             }
 

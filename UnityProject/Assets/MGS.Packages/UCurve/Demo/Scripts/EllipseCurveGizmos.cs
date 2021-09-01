@@ -43,7 +43,7 @@ namespace MGS.UCurve.Demo
             for (float r = min + delta; r < max; r += delta)
             {
                 var p1 = curve.Evaluate(r) + Vector3.Lerp(from, to, (r - min) / (max - min));
-                Gizmos.DrawLine(p0, p1);
+                Gizmos.DrawLine(transform.TransformPoint(p0), transform.TransformPoint(p1));
                 p0 = p1;
             }
         }
