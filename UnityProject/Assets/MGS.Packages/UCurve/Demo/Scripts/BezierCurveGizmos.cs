@@ -17,6 +17,9 @@ namespace MGS.UCurve.Demo
     public class BezierCurveGizmos : MonoBehaviour
     {
         [SerializeField]
+        bool drawTangents = true;
+
+        [SerializeField]
         BezierAnchor anchor = new BezierAnchor(Vector3.zero, Vector3.one, Vector3.forward, Vector2.one);
 
         BezierCurve curve = new BezierCurve();
@@ -35,9 +38,12 @@ namespace MGS.UCurve.Demo
                 p0 = p1;
             }
 
-            Gizmos.color = Color.yellow;
-            Gizmos.DrawLine(transform.TransformPoint(anchor.from), transform.TransformPoint(anchor.from + anchor.inTangent));
-            Gizmos.DrawLine(transform.TransformPoint(anchor.to), transform.TransformPoint(anchor.from + anchor.outTangent));
+            if (drawTangents)
+            {
+                Gizmos.color = Color.yellow;
+                Gizmos.DrawLine(transform.TransformPoint(anchor.from), transform.TransformPoint(anchor.from + anchor.inTangent));
+                Gizmos.DrawLine(transform.TransformPoint(anchor.to), transform.TransformPoint(anchor.from + anchor.outTangent));
+            }
         }
     }
 }

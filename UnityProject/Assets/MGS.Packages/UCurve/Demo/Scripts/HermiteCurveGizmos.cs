@@ -17,6 +17,12 @@ namespace MGS.UCurve.Demo
     public class HermiteCurveGizmos : MonoBehaviour
     {
         [SerializeField]
+        bool smoothTangents = true;
+
+        [SerializeField]
+        bool drawTangents = true;
+
+        [SerializeField]
         KeyFrame[] frames = new KeyFrame[]
         {
             new KeyFrame(0, Vector3.zero),
@@ -35,7 +41,10 @@ namespace MGS.UCurve.Demo
 
             curve.ClearFrames();
             curve.AddFrames(frames);
-            curve.SmoothTangents(0);
+            if (smoothTangents)
+            {
+                curve.SmoothTangents();
+            }
 
             var p0 = curve.Evaluate(frames[0].time); ;
             for (float k = frames[0].time; k < frames[frames.Length - 1].time; k += delta)
@@ -45,7 +54,17 @@ namespace MGS.UCurve.Demo
                 p0 = p1;
             }
 
-            Gizmos.color = Color.grey;
+            if (drawTangents)
+            {
+                Gizmos.color = Color.yellow;
+                for (int i = 0; i < curve.FramesCount; i++)
+                {
+                    var frame = curve[i];
+                    var p = transform.TransformPoint(frame.value);
+                    var ot = p + transform.TransformPoint(frame.outTangent);
+                    Gizmos.DrawLine(p, ot);
+                }
+            }
         }
     }
 }
