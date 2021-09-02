@@ -46,10 +46,10 @@ namespace MGS.UCurve.Demo
                 curve.SmoothTangents();
             }
 
-            var p0 = curve.Evaluate(frames[0].time); ;
-            for (float k = frames[0].time; k < frames[frames.Length - 1].time; k += delta)
+            var p0 = curve.Evaluate(frames[0].time);
+            for (float t = frames[0].time; t < frames[frames.Length - 1].time; t += delta)
             {
-                var p1 = curve.Evaluate(k);
+                var p1 = curve.Evaluate(t);
                 Gizmos.DrawLine(transform.TransformPoint(p0), transform.TransformPoint(p1));
                 p0 = p1;
             }

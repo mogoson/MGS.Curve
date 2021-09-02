@@ -31,9 +31,9 @@ namespace MGS.UCurve.Demo
 
             curve.Anchor = anchor;
             var p0 = curve.Evaluate(0); ;
-            for (float k = delta; k < 1.0f; k += delta)
+            for (float t = delta; t < 1.0f; t += delta)
             {
-                var p1 = curve.Evaluate(k);
+                var p1 = curve.Evaluate(t);
                 Gizmos.DrawLine(transform.TransformPoint(p0), transform.TransformPoint(p1));
                 p0 = p1;
             }
