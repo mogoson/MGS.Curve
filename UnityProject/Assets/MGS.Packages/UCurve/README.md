@@ -143,27 +143,9 @@ for (float t = frames[0].time; t < frames[frames.Length - 1].time; t += delta)
 
 - Demos in the path "MGS.Packages/UCurve/Demo/" provide reference to you.
 
-## Preview
+## Source
 
-- Sin Curve
-
-![](./Attachment/images/SinCurve.png)
-
-- Ellipse Curve
-
-![](./Attachment/images/EllipseCurve.png)
-
-- Helix Curve
-
-![](./Attachment/images/HelixCurve.png)
-
-- Bezier Curve
-
-![](./Attachment/images/BezierCurve.png)
-
-- Hermite Curve
-
-![](./Attachment/images/HermiteCurve.png)
+- https://github.com/mogoson/MGS.UCurve.
 
 ------
 
