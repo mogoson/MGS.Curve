@@ -41,10 +41,10 @@ namespace MGS.UCurve.Demo
         {
             Gizmos.color = Color.green;
 
-            curve.Top = top;
-            curve.Bottom = bottom;
-            curve.Altitude = altitude;
-            curve.Radian = radian;
+            curve.top = top;
+            curve.bottom = bottom;
+            curve.altitude = altitude;
+            curve.radian = radian;
 
             var p0 = curve.Evaluate(0) + from; ;
             for (float r = delta; r < radian; r += delta)

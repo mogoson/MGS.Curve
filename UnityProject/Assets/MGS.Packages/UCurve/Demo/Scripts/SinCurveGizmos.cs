@@ -38,7 +38,7 @@ namespace MGS.UCurve.Demo
         {
             Gizmos.color = Color.green;
 
-            curve.Args = args;
+            curve.args = args;
             var p0 = curve.Evaluate(min) + from;
             for (float x = min + delta; x < max; x += delta)
             {

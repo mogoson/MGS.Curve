@@ -29,7 +29,7 @@ namespace MGS.UCurve.Demo
         {
             Gizmos.color = Color.green;
 
-            curve.Anchor = anchor;
+            curve.anchor = anchor;
             var p0 = curve.Evaluate(0); ;
             for (float t = delta; t < 1.0f; t += delta)
             {

@@ -9,7 +9,7 @@
             Cubic bezier curve.
             </summary>
         </member>
-        <member name="P:MGS.UCurve.BezierCurve.Anchor">
+        <member name="F:MGS.UCurve.BezierCurve.anchor">
             <summary>
             Anchor settings of curve.
             </summary>
@@ -79,7 +79,7 @@
             Ellipse curve.
             </summary>
         </member>
-        <member name="P:MGS.UCurve.EllipseCurve.Args">
+        <member name="F:MGS.UCurve.EllipseCurve.args">
             <summary>
             Args of curve.
             </summary>
@@ -146,22 +146,22 @@
             Helix curve.
             </summary>
         </member>
-        <member name="P:MGS.UCurve.HelixCurve.Top">
+        <member name="F:MGS.UCurve.HelixCurve.top">
             <summary>
             Args of curve lerp from.
             </summary>
         </member>
-        <member name="P:MGS.UCurve.HelixCurve.Bottom">
+        <member name="F:MGS.UCurve.HelixCurve.bottom">
             <summary>
             Args of curve lerp to.
             </summary>
         </member>
-        <member name="P:MGS.UCurve.HelixCurve.Altitude">
+        <member name="F:MGS.UCurve.HelixCurve.altitude">
             <summary>
             Altitude from bottom to top.
             </summary>
         </member>
-        <member name="P:MGS.UCurve.HelixCurve.Radian">
+        <member name="F:MGS.UCurve.HelixCurve.radian">
             <summary>
             Around radian.
             </summary>
@@ -175,8 +175,8 @@
             <summary>
             Constructor.
             </summary>
-            <param name="from">Args of curve lerp from.</param>
-            <param name="to">Args of curve lerp to.</param>
+            <param name="top">Args of curve lerp from.</param>
+            <param name="bottom">Args of curve lerp to.</param>
         </member>
         <member name="M:MGS.UCurve.HelixCurve.Evaluate(System.Single)">
             <summary>
@@ -377,7 +377,7 @@
              Sin curve.
             </summary>
         </member>
-        <member name="P:MGS.UCurve.SinCurve.Args">
+        <member name="F:MGS.UCurve.SinCurve.args">
             <summary>
             Args of curve.
             </summary>
