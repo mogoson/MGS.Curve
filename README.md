@@ -30,90 +30,13 @@ public class HermiteCurve : ITimeCurve{}
 ### Hermite Polynomial Structure
 
 ```C#
-/*  Designed By Mogoson.
- *  Hermite Polynomial Structure
- *  Base: H(t) = v0a0(t) + v1a1(t) + m0b0(t) + m1b1(t)
- * 
- *                     t-t0    t-t1  2
- *        a0(t) = (1+2------)(------)
- *                     t1-t0   t0-t1
- *                    
- *                     t-t1    t-t0  2
- *        a1(t) = (1+2------)(------)
- *                     t0-t1   t1-t0
- * 
- *                        t-t1  2
- *        b0(t) = (t-t0)(------)
- *                        t0-t1
- * 
- *                        t-t0  2
- *        b1(t) = (t-t1)(------)
- *                        t1-t0
- * 
- *  Let:  d0 = t-t0, d1 = t-t1, d = t0-t1
- * 
- *              d0          d1
- *        q0 = ---- , q1 = ----
- *              d           d
- * 
- *               t-t1  2     d1  2     2          t-t0  2     d0  2     2
- *        p0 = (------)  = (----)  = q1  , p1 = (------)  = (----)  = q0
- *               t0-t1       d                    t1-t0       -d
- * 
- *  Get:  H(t) = (1-2q0)v0p0 + (1+2q1)v1p1 + mod0p0 + m1d1p1
- */
 
-var d0 = t - t0;
-var d1 = t - t1;
-var d = t0 - t1;
-
-var q0 = d0 / d;
-var q1 = d1 / d;
-
-var p0 = q1 * q1;
-var p1 = q0 * q0;
-
-return (1 - 2 * q0) * v0 * p0 + (1 + 2 * q1) * v1 * p1 + m0 * d0 * p0 + m1 * d1 * p1;
 ```
 
 ### Tangent Smooth
 
 ```C#
-//Designed By Mogoson.
-KeyFrame k0, k1, k2;
-if (index == 0 || index == frames.Count - 1)
-{
-    if (frames[0].value != frames[frames.Count - 1].value)
-    {
-        return;
-    }
 
-    k0 = frames[frames.Count - 2];
-    k1 = frames[index];
-    k2 = frames[1];
-
-    if (index == 0)
-    {
-        k0.time -= frames[frames.Count - 1].time;
-    }
-    else
-    {
-        k2.time += frames[frames.Count - 1].time;
-    }
-}
-else
-{
-    k0 = frames[index - 1];
-    k1 = frames[index];
-    k2 = frames[index + 1];
-}
-
-var weight01 = (1 + weight) / 2;
-var weight12 = (1 - weight) / 2;
-var t01 = (k1.value - k0.value) / (k1.time - k0.time);
-var t12 = (k2.value - k1.value) / (k2.time - k1.time);
-k1.inTangent = k1.outTangent = t01 * weight01 + t12 * weight12;
-frames[index] = k1;
 ```
 
 ## Usage
@@ -145,25 +68,17 @@ for (float t = frames[0].time; t < frames[frames.Length - 1].time; t += delta)
 
 ## Preview
 
-- Sin Curve
+- MonoHermiteCurve
 
-![](./Attachment/images/SinCurve.png)
+![](./Attachment/images/MonoHermiteCurve.png)
 
-- Ellipse Curve
+- MonoBezierCurve
 
-![](./Attachment/images/EllipseCurve.png)
+![](./Attachment/images/MonoBezierCurve.png)
 
-- Helix Curve
+- MonoHelixCurve
 
-![](./Attachment/images/HelixCurve.png)
-
-- Bezier Curve
-
-![](./Attachment/images/BezierCurve.png)
-
-- Hermite Curve
-
-![](./Attachment/images/HermiteCurve.png)
+![](./Attachment/images/MonoHelixCurve.png)
 
 ------
 
