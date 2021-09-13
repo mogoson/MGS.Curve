@@ -104,23 +104,23 @@ If the start and end points are close, they will stick together.
 ```C#
 //Evaluate point on the mono curve at length.
 var len = 0f;
-var p0 = Target.Evaluate(len);
-while (len < Target.Length)
+var p0 = curve.Evaluate(len);
+while (len < curve.Length)
 {
-    len = Mathf.Min(len + 0.01f, Target.Length);
-    var p1 = Target.Evaluate(len);
+    len = Mathf.Min(len + 0.01f, curve.Length);
+    var p1 = curve.Evaluate(len);
     //Just for demo, you can use p0,p1 to do more things.
     Gizmos.DrawLine(p0, p1);
     p0 = p1;
 }
 
-//Evaluate the curve at normalized time int the range[0,1].
+//Evaluate point on the mono curve at normalized time int the range[0,1].
 var t = 0f;
-var p0 = EvaluateNormalized(t);
+var p0 = curve.EvaluateNormalized(t);
 while (t < 1.0f)
 {
     t = Mathf.Min(t + differ, 1.0f);
-    var p1 = EvaluateNormalized(t);
+    var p1 = curve.EvaluateNormalized(t);
     //Just for demo, you can use p0,p1 to do more things.
     Gizmos.DrawLine(p0, p1);
     p0 = p1;
