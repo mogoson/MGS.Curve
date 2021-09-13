@@ -1,6 +1,6 @@
 [TOC]
 
-# MGS.MonoCurve
+# MGS.MonoCurve.dll
 
 ## Summary
 
@@ -127,23 +127,9 @@ while (t < 1.0f)
 }
 ```
 
-## Demo
+------
 
-- Demos in the path "MGS.Packages/Curve/Demo/" provide reference to you.
-
-## Preview
-
-- MonoHermiteCurve
-
-![](./Attachment/images/MonoHermiteCurve.png)
-
-- MonoBezierCurve
-
-![](./Attachment/images/MonoBezierCurve.png)
-
-- MonoHelixCurve
-
-![](./Attachment/images/MonoHelixCurve.png)
+[Previous](../../README.md)
 
 ------
 

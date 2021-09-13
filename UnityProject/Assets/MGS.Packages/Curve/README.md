@@ -1,10 +1,10 @@
 [TOC]
 
-# MGS.UCurve
+# MGS.MonoCurve
 
 ## Summary
 
-- Smooth 3D curve for Unity project develop.
+- Smooth 3D curve component for Unity project develop.
 
 ## Environment
 
@@ -18,134 +18,122 @@
 ## Implemented
 
 ```C#
-public class SinCurve : ITimeCurve{}
-public class EllipseCurve : ITimeCurve{}
-public class HelixCurve : ITimeCurve{}
-public class BezierCurve : ITimeCurve{}
-public class HermiteCurve : ITimeCurve{}
+public class MonoSinCurve : MonoCurve{}
+public class MonoEllipseCurve : MonoCurve{}
+public class MonoHelixCurve : MonoCurve{}
+public class MonoBezierCurve : MonoCurve{}
+public class MonoHermiteCurve : MonoCurve{}
 ```
 
 ## Technology
 
-### Hermite Polynomial Structure
+### Transform
 
 ```C#
-/*  Designed By Mogoson.
- *  Hermite Polynomial Structure
- *  Base: H(t) = v0a0(t) + v1a1(t) + m0b0(t) + m1b1(t)
- * 
- *                     t-t0    t-t1  2
- *        a0(t) = (1+2------)(------)
- *                     t1-t0   t0-t1
- *                    
- *                     t-t1    t-t0  2
- *        a1(t) = (1+2------)(------)
- *                     t0-t1   t1-t0
- * 
- *                        t-t1  2
- *        b0(t) = (t-t0)(------)
- *                        t0-t1
- * 
- *                        t-t0  2
- *        b1(t) = (t-t1)(------)
- *                        t1-t0
- * 
- *  Let:  d0 = t-t0, d1 = t-t1, d = t0-t1
- * 
- *              d0          d1
- *        q0 = ---- , q1 = ----
- *              d           d
- * 
- *               t-t1  2     d1  2     2          t-t0  2     d0  2     2
- *        p0 = (------)  = (----)  = q1  , p1 = (------)  = (----)  = q0
- *               t0-t1       d                    t1-t0       -d
- * 
- *  Get:  H(t) = (1-2q0)v0p0 + (1+2q1)v1p1 + mod0p0 + m1d1p1
- */
+//World to local position.
+return transform.TransformPoint(worldPos);
+//Local to world position.
+transform.InverseTransformPoint(localPos);
 
-var d0 = t - t0;
-var d1 = t - t1;
-var d = t0 - t1;
-
-var q0 = d0 / d;
-var q1 = d1 / d;
-
-var p0 = q1 * q1;
-var p1 = q0 * q0;
-
-return (1 - 2 * q0) * v0 * p0 + (1 + 2 * q1) * v1 * p1 + m0 * d0 * p0 + m1 * d1 * p1;
+//World to local vector.
+return transform.TransformPoint(worldVector);
+//Local to world vector.
+transform.InverseTransformPoint(localVector);
 ```
 
-### Tangent Smooth
+### Calculus
 
 ```C#
-//Designed By Mogoson.
-KeyFrame k0, k1, k2;
-if (index == 0 || index == frames.Count - 1)
+//Evaluate length of MonoSinCurve.
+var halfPI = Mathf.PI * 0.5f;
+var angularAbs = Mathf.Abs(args.angular);
+var piece = Vector2.Distance(Vector2.zero, new Vector2(halfPI / angularAbs, args.amplitude));
+var pieces = piece * angularAbs;
+var segments = Mathf.RoundToInt(radian / halfPI);
+return pieces * segments;
+
+//Evaluate length of MonoEllipseCurve.
+var ratio = Mathf.Abs(radian) / (Mathf.PI * 2);
+if (args.semiMinorAxis == 0 || args.semiMajorAxis == 0)
 {
-    if (frames[0].value != frames[frames.Count - 1].value)
-    {
-        return;
-    }
-
-    k0 = frames[frames.Count - 2];
-    k1 = frames[index];
-    k2 = frames[1];
-
-    if (index == 0)
-    {
-        k0.time -= frames[frames.Count - 1].time;
-    }
-    else
-    {
-        k2.time += frames[frames.Count - 1].time;
-    }
+    return 2 * Mathf.Abs(args.semiMinorAxis + args.semiMajorAxis) * ratio;
 }
-else
+var minor = Mathf.Abs(args.semiMinorAxis);
+var major = Mathf.Abs(args.semiMajorAxis);
+var a = Mathf.Max(minor, major);
+var b = Mathf.Min(minor, major);
+return (2 * Mathf.PI * b + 4 * (a - b)) * ratio;
+
+//Evaluate length of MonoHelixCurve, MonoBezierCurve and MonoHermiteCurve.
+var length = 0f;
+var t = 0f;
+var p0 = EvaluateNormalized(t);
+while (t < 1.0f)
 {
-    k0 = frames[index - 1];
-    k1 = frames[index];
-    k2 = frames[index + 1];
+    t = Mathf.Min(t + differ, 1.0f);
+    var p1 = EvaluateNormalized(t);
+    length += Vector3.Distance(p0, p1);
+    p0 = p1;
 }
-
-var weight01 = (1 + weight) / 2;
-var weight12 = (1 - weight) / 2;
-var t01 = (k1.value - k0.value) / (k1.time - k0.time);
-var t12 = (k2.value - k1.value) / (k2.time - k1.time);
-k1.inTangent = k1.outTangent = t01 * weight01 + t12 * weight12;
-frames[index] = k1;
+return length;
 ```
 
 ## Usage
 
-- New a Curve and Set Args to it.
+- Attach mono curve component to a game object.
+- Adjust the args of curve component or edit curve in scene editor.
 
-```C#
-var curve = new HermiteCurve();
-curve.AddFrames(frames);
-curve.SmoothTangents();//If need SmoothTangents Auto.
+```tex
+Select the MonoBezierCurve and drag the handle to adjust the anchor to see effect.
+Press and hold the ALT into Tangent Edit mode, drag the handle to adjust the tangent of anchor.
+If the start and end points are close, they will stick together.
+
+Select the MonoHermiteCurve and drag the handle to adjust the anchor to see effect.
+Press and hold the CTRL into Insert Edit mode, click the green handle to add a new anchor.
+Press and hold the CTRL+SHIFT into Remove Edit mode, click the red handle to remove a anchor.
+If do not use Auto Smooth,
+Press and hold the ALT into Tangent Edit mode, drag the handle to adjust the tangent of anchor.
+Press and hold the ALT+SHIFT into InOutTangent Edit mode, drag the handle to adjust the in out tangents of anchor.
+If the start and end points are close, they will stick together.
 ```
 
-- Use time lapse to Evaluate target Vector3.
+
+
+- Evaluate point on the mono curve.
 
 ```C#
-var p0 = curve.Evaluate(frames[0].time);
-for (float t = frames[0].time; t < frames[frames.Length - 1].time; t += delta)
+//Evaluate point on the mono curve at length.
+var len = 0f;
+var p0 = Target.Evaluate(len);
+while (len < Target.Length)
 {
-    var p1 = curve.Evaluate(t);
+    len = Mathf.Min(len + 0.01f, Target.Length);
+    var p1 = Target.Evaluate(len);
     //Just for demo, you can use p0,p1 to do more things.
-    Gizmos.DrawLine(transform.TransformPoint(p0), transform.TransformPoint(p1));
+    Gizmos.DrawLine(p0, p1);
+    p0 = p1;
+}
+
+//Evaluate the curve at normalized time int the range[0,1].
+var t = 0f;
+var p0 = EvaluateNormalized(t);
+while (t < 1.0f)
+{
+    t = Mathf.Min(t + differ, 1.0f);
+    var p1 = EvaluateNormalized(t);
+    //Just for demo, you can use p0,p1 to do more things.
+    Gizmos.DrawLine(p0, p1);
     p0 = p1;
 }
 ```
 
 ## Demo
 
-- Demos in the path "MGS.Packages/UCurve/Demo/" provide reference to you.
+- Demos in the path "MGS.Packages/Curve/Demo/" provide reference to you.
 
 ## Source
 
-- https://github.com/mogoson/MGS.UCurve.
+- https://github.com/mogoson/MGS.MonoCurve.
 
 ------
 
