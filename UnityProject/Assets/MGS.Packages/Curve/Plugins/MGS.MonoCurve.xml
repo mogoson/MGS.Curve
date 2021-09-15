@@ -34,6 +34,11 @@
             To tangent vector based on point.
             </summary>
         </member>
+        <member name="P:MGS.Curve.MonoBezierCurve.IsClose">
+            <summary>
+            Mono curve is close?
+            </summary>
+        </member>
         <member name="P:MGS.Curve.MonoBezierCurve.Length">
             <summary>
             Length of mono curve.
@@ -212,12 +217,12 @@
             Rebuild mono curve.
             </summary>
         </member>
-        <member name="M:MGS.Curve.MonoHermiteCurve.Evaluate(System.Single)">
+        <member name="M:MGS.Curve.MonoHermiteCurve.EvaluateNormalized(System.Single)">
             <summary>
-            Evaluate point on the mono curve at time[0,1].
+            Evaluate the curve at normalized time int the range[0,1].
             </summary>
-            <param name="t"></param>
-            <returns></returns>
+            <param name="t">The normalized time.</param>
+            <returns>The value of the curve, at the point in time specified.</returns>
         </member>
         <member name="M:MGS.Curve.MonoHermiteCurve.AddAnchor(MGS.Curve.HermiteAnchor)">
             <summary>
