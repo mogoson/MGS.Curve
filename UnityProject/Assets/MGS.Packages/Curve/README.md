@@ -18,11 +18,15 @@
 ## Implemented
 
 ```C#
+public abstract class MonoCurve : MonoBehaviour, IMonoCurve
 public class MonoSinCurve : MonoCurve{}
 public class MonoEllipseCurve : MonoCurve{}
 public class MonoHelixCurve : MonoCurve{}
 public class MonoBezierCurve : MonoCurve{}
 public class MonoHermiteCurve : MonoCurve{}
+
+public abstract class MonoCurveRenderer : MonoBehaviour, IMonoCurveRenderer{}
+public class MonoCurveLineRenderer : MonoCurveRenderer{}
 ```
 
 ## Technology
@@ -39,6 +43,16 @@ transform.InverseTransformPoint(localPos);
 return transform.TransformPoint(worldVector);
 //Local to world vector.
 transform.InverseTransformPoint(localVector);
+```
+
+### Differentiation
+
+```C#
+//AwayFromZero means that 12.5 -> 13
+var units = (int)Math.Round(curve.Length * detail.unit, MidpointRounding.AwayFromZero);
+var count = Mathf.Clamp(units, detail.min, detail.max);
+differ = curve.Length / count;
+return count;
 ```
 
 ### Calculus
@@ -97,7 +111,7 @@ Press and hold the ALT+SHIFT into InOutTangent Edit mode, drag the handle to adj
 If the start and end points are close, they will stick together.
 ```
 
-
+- Attach mono curve renderer component to the mono curve game object to renderer curve in scene.
 
 - Evaluate point on the mono curve.
 

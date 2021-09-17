@@ -18,11 +18,15 @@
 ## Implemented
 
 ```C#
+public abstract class MonoCurve : MonoBehaviour, IMonoCurve
 public class MonoSinCurve : MonoCurve{}
 public class MonoEllipseCurve : MonoCurve{}
 public class MonoHelixCurve : MonoCurve{}
 public class MonoBezierCurve : MonoCurve{}
 public class MonoHermiteCurve : MonoCurve{}
+
+public abstract class MonoCurveRenderer : MonoBehaviour, IMonoCurveRenderer{}
+public class MonoCurveLineRenderer : MonoCurveRenderer{}
 ```
 
 ## Technology
@@ -39,6 +43,16 @@ transform.InverseTransformPoint(localPos);
 return transform.TransformPoint(worldVector);
 //Local to world vector.
 transform.InverseTransformPoint(localVector);
+```
+
+### Differentiation
+
+```C#
+//AwayFromZero means that 12.5 -> 13
+var units = (int)Math.Round(curve.Length * detail.unit, MidpointRounding.AwayFromZero);
+var count = Mathf.Clamp(units, detail.min, detail.max);
+differ = curve.Length / count;
+return count;
 ```
 
 ### Calculus
@@ -97,30 +111,30 @@ Press and hold the ALT+SHIFT into InOutTangent Edit mode, drag the handle to adj
 If the start and end points are close, they will stick together.
 ```
 
-
+- Attach mono curve renderer component to the mono curve game object to renderer curve in scene.
 
 - Evaluate point on the mono curve.
 
 ```C#
 //Evaluate point on the mono curve at length.
 var len = 0f;
-var p0 = Target.Evaluate(len);
-while (len < Target.Length)
+var p0 = curve.Evaluate(len);
+while (len < curve.Length)
 {
-    len = Mathf.Min(len + 0.01f, Target.Length);
-    var p1 = Target.Evaluate(len);
+    len = Mathf.Min(len + 0.01f, curve.Length);
+    var p1 = curve.Evaluate(len);
     //Just for demo, you can use p0,p1 to do more things.
     Gizmos.DrawLine(p0, p1);
     p0 = p1;
 }
 
-//Evaluate the curve at normalized time int the range[0,1].
+//Evaluate point on the mono curve at normalized time int the range[0,1].
 var t = 0f;
-var p0 = EvaluateNormalized(t);
+var p0 = curve.EvaluateNormalized(t);
 while (t < 1.0f)
 {
     t = Mathf.Min(t + differ, 1.0f);
-    var p1 = EvaluateNormalized(t);
+    var p1 = curve.EvaluateNormalized(t);
     //Just for demo, you can use p0,p1 to do more things.
     Gizmos.DrawLine(p0, p1);
     p0 = p1;
