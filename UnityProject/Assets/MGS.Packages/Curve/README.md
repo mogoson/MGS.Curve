@@ -103,11 +103,14 @@ Press and hold the ALT into Tangent Edit mode, drag the handle to adjust the tan
 If the start and end points are close, they will stick together.
 
 Select the MonoHermiteCurve and drag the handle to adjust the anchor to see effect.
-Press and hold the CTRL into Insert Edit mode, click the green handle to add a new anchor.
-Press and hold the CTRL+SHIFT into Remove Edit mode, click the red handle to remove a anchor.
+Press and hold the CTRL, click the green handle to add a new anchor.
+Press and hold the CTRL+SHIFT, click the red handle to remove a anchor.
 If do not use Auto Smooth,
-Press and hold the ALT into Tangent Edit mode, drag the handle to adjust the tangent of anchor.
-Press and hold the ALT+SHIFT into InOutTangent Edit mode, drag the handle to adjust the in out tangents of anchor.
+Press and hold the ALT, click the cyan handle to open Tangent editor and drag the
+ cyan handle to adjust the tangent of anchor; on this mode, Press and hold the SHIFT
+ to open In and Out tangent editor, drag the cyan and green handle to adjust the
+ tangents of anchor.
+Press and hold the ALT+COMMAND into All Tangents mode.
 If the start and end points are close, they will stick together.
 ```
 
