@@ -104,9 +104,9 @@
             Rebuild mono curve.
             </summary>
         </member>
-        <member name="M:MGS.Curve.MonoEllipseCurve.EvaluateNormalized(System.Single)">
+        <member name="M:MGS.Curve.MonoEllipseCurve.LocalEvaluateNormalized(System.Single)">
             <summary>
-            Evaluate the curve at normalized time int the range[0,1].
+            Evaluate local point on mono curve at normalized time int the range[0,1].
             </summary>
             <param name="t">The normalized time.</param>
             <returns>The value of the curve, at the point in time specified.</returns>
@@ -217,9 +217,9 @@
             Rebuild mono curve.
             </summary>
         </member>
-        <member name="M:MGS.Curve.MonoHermiteCurve.EvaluateNormalized(System.Single)">
+        <member name="M:MGS.Curve.MonoHermiteCurve.LocalEvaluateNormalized(System.Single)">
             <summary>
-            Evaluate the curve at normalized time int the range[0,1].
+            Evaluate local point on mono curve at normalized time int the range[0,1].
             </summary>
             <param name="t">The normalized time.</param>
             <returns>The value of the curve, at the point in time specified.</returns>
@@ -337,9 +337,30 @@
             Rebuild mono curve.
             </summary>
         </member>
+        <member name="M:MGS.Curve.IMonoCurve.Evaluate(System.Single)">
+            <summary>
+            Evaluate point on mono curve at length.
+            </summary>
+            <param name="len"></param>
+            <returns></returns>
+        </member>
         <member name="M:MGS.Curve.IMonoCurve.EvaluateNormalized(System.Single)">
             <summary>
-            Evaluate the curve at normalized time int the range[0,1].
+            Evaluate point on mono curve at normalized time int the range[0,1].
+            </summary>
+            <param name="t">The normalized time.</param>
+            <returns>The value of the curve, at the point in time specified.</returns>
+        </member>
+        <member name="M:MGS.Curve.IMonoCurve.LocalEvaluate(System.Single)">
+            <summary>
+            Evaluate local point on mono curve at length.
+            </summary>
+            <param name="len"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MGS.Curve.IMonoCurve.LocalEvaluateNormalized(System.Single)">
+            <summary>
+            Evaluate local point on mono curve at normalized time int the range[0,1].
             </summary>
             <param name="t">The normalized time.</param>
             <returns>The value of the curve, at the point in time specified.</returns>
@@ -376,14 +397,28 @@
         </member>
         <member name="M:MGS.Curve.MonoCurve.Evaluate(System.Single)">
             <summary>
-            Evaluate point on the mono curve at length.
+            Evaluate point on mono curve at length.
             </summary>
             <param name="len"></param>
             <returns></returns>
         </member>
         <member name="M:MGS.Curve.MonoCurve.EvaluateNormalized(System.Single)">
             <summary>
-            Evaluate the curve at normalized time int the range[0,1].
+            Evaluate point on mono curve at normalized time int the range[0,1].
+            </summary>
+            <param name="t">The normalized time.</param>
+            <returns>The value of the curve, at the point in time specified.</returns>
+        </member>
+        <member name="M:MGS.Curve.MonoCurve.LocalEvaluate(System.Single)">
+            <summary>
+            Evaluate local point on mono curve at length.
+            </summary>
+            <param name="len"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MGS.Curve.MonoCurve.LocalEvaluateNormalized(System.Single)">
+            <summary>
+            Evaluate local point on mono curve at normalized time int the range[0,1].
             </summary>
             <param name="t">The normalized time.</param>
             <returns>The value of the curve, at the point in time specified.</returns>
@@ -435,9 +470,9 @@
             Rebuild mono curve.
             </summary>
         </member>
-        <member name="M:MGS.Curve.MonoSinCurve.EvaluateNormalized(System.Single)">
+        <member name="M:MGS.Curve.MonoSinCurve.LocalEvaluateNormalized(System.Single)">
             <summary>
-            Evaluate the curve at normalized time int the range[0,1].
+            Evaluate local point on mono curve at normalized time int the range[0,1].
             </summary>
             <param name="t">The normalized time.</param>
             <returns>The value of the curve, at the point in time specified.</returns>
@@ -475,7 +510,7 @@
         </member>
         <member name="M:MGS.Curve.MonoCurveRenderer.OnMonoCurveRebuild(MGS.Curve.IMonoCurve)">
             <summary>
-            On mono curve rebuild (Message from mono curve).
+            [MESSAGE] On mono curve rebuild.
             </summary>
             <param name="curve"></param>
         </member>
