@@ -453,14 +453,14 @@
             Renderer for mono curve.
             </summary>
         </member>
-        <member name="F:MGS.Curve.MonoCurveRenderer.detail">
+        <member name="F:MGS.Curve.MonoCurveRenderer.segment">
             <summary>
             Detail length for renderer.
             </summary>
         </member>
-        <member name="P:MGS.Curve.MonoCurveRenderer.Detail">
+        <member name="P:MGS.Curve.MonoCurveRenderer.Segment">
             <summary>
-            Detail length for renderer.
+            Segment length of mono curve.
             </summary>
         </member>
         <member name="P:MGS.Curve.MonoCurveRenderer.Renderer">
@@ -495,9 +495,9 @@
             Renderer component.
             </summary>
         </member>
-        <member name="P:MGS.Curve.IMonoCurveRenderer.Detail">
+        <member name="P:MGS.Curve.IMonoCurveRenderer.Segment">
             <summary>
-            Detail length for renderer.
+            Segment length of mono curve.
             </summary>
         </member>
         <member name="M:MGS.Curve.IMonoCurveRenderer.Rebuild(MGS.Curve.IMonoCurve)">
@@ -537,12 +537,12 @@
             Utility for mono curve.
             </summary>
         </member>
-        <member name="M:MGS.Curve.MonoCurveUtility.GetDetailCount(MGS.Curve.IMonoCurve,System.Single,System.Single@)">
+        <member name="M:MGS.Curve.MonoCurveUtility.GetSegmentCount(MGS.Curve.IMonoCurve,System.Single,System.Single@)">
             <summary>
-            Get detail count of mono curve.
+            Get segment count of mono curve.
             </summary>
             <param name="curve"></param>
-            <param name="detail"></param>
+            <param name="segment"></param>
             <param name="differ">Differentiation.</param>
             <returns>Detail count of mono curve.</returns>
         </member>
