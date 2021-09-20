@@ -455,12 +455,12 @@
         </member>
         <member name="F:MGS.Curve.MonoCurveRenderer.detail">
             <summary>
-            Detail settings of render.
+            Detail length for renderer.
             </summary>
         </member>
         <member name="P:MGS.Curve.MonoCurveRenderer.Detail">
             <summary>
-            Detail settings of render.
+            Detail length for renderer.
             </summary>
         </member>
         <member name="P:MGS.Curve.MonoCurveRenderer.Renderer">
@@ -497,7 +497,7 @@
         </member>
         <member name="P:MGS.Curve.IMonoCurveRenderer.Detail">
             <summary>
-            Detail settings of render.
+            Detail length for renderer.
             </summary>
         </member>
         <member name="M:MGS.Curve.IMonoCurveRenderer.Rebuild(MGS.Curve.IMonoCurve)">
@@ -532,40 +532,12 @@
             </summary>
             <param name="curve"></param>
         </member>
-        <member name="T:MGS.Curve.MonoCurveDetail">
-            <summary>
-            Detail settings of mono curve.
-            </summary>
-        </member>
-        <member name="F:MGS.Curve.MonoCurveDetail.min">
-            <summary>
-            Min detail.
-            </summary>
-        </member>
-        <member name="F:MGS.Curve.MonoCurveDetail.unit">
-            <summary>
-            Unit detail.
-            </summary>
-        </member>
-        <member name="F:MGS.Curve.MonoCurveDetail.max">
-            <summary>
-            Max detail.
-            </summary>
-        </member>
-        <member name="M:MGS.Curve.MonoCurveDetail.#ctor(System.Int32,System.Int32,System.Int32)">
-            <summary>
-            Constructor.
-            </summary>
-            <param name="min">Min detail.</param>
-            <param name="normal">Normal detail.</param>
-            <param name="max">Max detail.</param>
-        </member>
         <member name="T:MGS.Curve.MonoCurveUtility">
             <summary>
             Utility for mono curve.
             </summary>
         </member>
-        <member name="M:MGS.Curve.MonoCurveUtility.GetDetailCount(MGS.Curve.IMonoCurve,MGS.Curve.MonoCurveDetail,System.Single@)">
+        <member name="M:MGS.Curve.MonoCurveUtility.GetDetailCount(MGS.Curve.IMonoCurve,System.Single,System.Single@)">
             <summary>
             Get detail count of mono curve.
             </summary>
