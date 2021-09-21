@@ -106,7 +106,7 @@ Select the MonoHermiteCurve and drag the handle to adjust the anchor to see effe
 Press and hold the CTRL, click the green handle to add a new anchor.
 Press and hold the CTRL+SHIFT, click the red handle to remove a anchor.
 If do not use Auto Smooth,
-Press and hold the ALT, click the cyan handle to open Tangent editor and drag the
+Press and hold the ALT, click the blue handle to open Tangent editor and drag the
  cyan handle to adjust the tangent of anchor; on this mode, Press and hold the SHIFT
  to open In and Out tangent editor, drag the cyan and green handle to adjust the
  tangents of anchor.
