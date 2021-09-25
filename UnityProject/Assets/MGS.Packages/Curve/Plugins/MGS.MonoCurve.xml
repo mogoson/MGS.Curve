@@ -16,7 +16,7 @@
         </member>
         <member name="P:MGS.Curve.IMonoCurveCollider.Segments">
             <summary>
-            Segment count of mono curve.
+            Segments count of collider.
             </summary>
         </member>
         <member name="P:MGS.Curve.IMonoCurveCollider.Radius">
@@ -45,6 +45,11 @@
             Capsule collider for mono curve.
             </summary>
         </member>
+        <member name="M:MGS.Curve.MonoCurveCapsuleCollider.Start">
+            <summary>
+            Component start.
+            </summary>
+        </member>
         <member name="M:MGS.Curve.MonoCurveCapsuleCollider.Rebuild(MGS.Curve.IMonoCurve)">
             <summary>
             Rebuild collider base curve.
@@ -56,7 +61,7 @@
             Set capsule colliders.
             </summary>
             <param name="curve"></param>
-            <param name="count"></param>
+            <param name="segments"></param>
             <param name="differ"></param>
         </member>
         <member name="M:MGS.Curve.MonoCurveCapsuleCollider.RequireCapsules(System.Int32)">
@@ -97,7 +102,7 @@
         </member>
         <member name="P:MGS.Curve.MonoCurveCollider.Segments">
             <summary>
-            Segment count of mono curve.
+            Segments count of collider.
             </summary>
         </member>
         <member name="P:MGS.Curve.MonoCurveCollider.Radius">
@@ -644,7 +649,7 @@
         </member>
         <member name="P:MGS.Curve.MonoCurveRenderer.Segments">
             <summary>
-            Segment count of mono curve.
+            Segments count of renderer.
             </summary>
         </member>
         <member name="P:MGS.Curve.MonoCurveRenderer.Renderer">
@@ -686,7 +691,7 @@
         </member>
         <member name="P:MGS.Curve.IMonoCurveRenderer.Segments">
             <summary>
-            Segment count of mono curve.
+            Segments count of renderer.
             </summary>
         </member>
         <member name="M:MGS.Curve.IMonoCurveRenderer.Rebuild(MGS.Curve.IMonoCurve)">
