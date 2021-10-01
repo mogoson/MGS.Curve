@@ -15,6 +15,13 @@
 - .Net Framework 3.5 or above.
 - Unity 5.0 or above.
 
+## Demand
+
+- Create smooth **Curve** in 3D space.
+- Create **Renderer** to show curve in scene.
+- Create **Collider** to check trigger in scene.
+- Create **Cacher** to build curve to cache file and load curve from cache file.
+
 ## Implemented
 
 ```C#
@@ -24,10 +31,17 @@ public class MonoEllipseCurve : MonoCurve{}
 public class MonoHelixCurve : MonoCurve{}
 public class MonoBezierCurve : MonoCurve{}
 public class MonoHermiteCurve : MonoCurve{}
+
 public abstract class MonoCurveRenderer : MonoBehaviour, IMonoCurveRenderer{}
 public class MonoCurveLineRenderer : MonoCurveRenderer{}
+
 public abstract class MonoCurveCollider : MonoBehaviour, IMonoCurveCollider{}
 public class MonoCurveCapsuleCollider : MonoCurveCollider{}
+
+//Unity 5.3 or above.
+public abstract class MonoCurveCacher : MonoBehaviour, IMonoCurveCacher{}
+public class MonoBezierCurveCacher : MonoCurveCacher{}
+public class MonoHermiteCurveCacher : MonoCurveCacher{}
 ```
 
 ## Technology
@@ -115,9 +129,10 @@ Press and hold the ALT+COMMAND into All Tangents mode.
 If the start and end points are close, they will stick together.
 ```
 
-- Attach mono curve renderer component to the mono curve game object to renderer curve in scene.
-
-- Evaluate point on the mono curve.
+- Attach mono curve renderer component to the mono curve game object to renderer curve in scene  if need.
+- Attach mono curve collider component to the mono curve game object if need.
+- Attach mono curve cacher component to the mono curve game object if need.
+- Evaluate point on the mono curve if need.
 
 ```C#
 //Evaluate point on the mono curve at length.
@@ -151,13 +166,13 @@ while (t < 1.0f)
 
 ## Preview
 
-- MonoHermiteCurveRenderer
+- MonoHermiteCurve
 
 ![](.\Attachment\images\MonoHermiteCurveRendererEdit.PNG)
 
 ![](.\Attachment\images\MonoHermiteCurveRenderer.PNG)
 
-- MonoBezierCurveRenderer
+- MonoBezierCurve
 
 ![](.\Attachment\images\MonoBezierCurveCollider.PNG)
 
