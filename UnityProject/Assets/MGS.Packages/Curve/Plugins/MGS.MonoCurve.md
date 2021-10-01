@@ -149,7 +149,7 @@ while (len < curve.Length)
     p0 = p1;
 }
 
-//Evaluate point on the mono curve at normalized time int the range[0,1].
+//Evaluate point on the mono curve at normalized time in the range[0,1].
 var t = 0f;
 var p0 = curve.EvaluateNormalized(t);
 while (t < 1.0f)
