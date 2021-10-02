@@ -17,13 +17,6 @@
 - System.dll
 - UnityEngine.dll
 
-## Demand
-
-- Create smooth **Curve** in 3D space.
-- Create **Renderer** to show curve in scene.
-- Create **Collider** to check trigger in scene.
-- Create **Cacher** to build curve to cache file and load curve from cache file.
-
 ## Implemented
 
 ```C#
@@ -36,14 +29,6 @@ public class MonoHermiteCurve : MonoCurve{}
 
 public abstract class MonoCurveRenderer : MonoBehaviour, IMonoCurveRenderer{}
 public class MonoCurveLineRenderer : MonoCurveRenderer{}
-
-public abstract class MonoCurveCollider : MonoBehaviour, IMonoCurveCollider{}
-public class MonoCurveCapsuleCollider : MonoCurveCollider{}
-
-//Unity 5.3 or above.
-public abstract class MonoCurveCacher : MonoBehaviour, IMonoCurveCacher{}
-public class MonoBezierCurveCacher : MonoCurveCacher{}
-public class MonoHermiteCurveCacher : MonoCurveCacher{}
 ```
 
 ## Technology
@@ -131,10 +116,9 @@ Press and hold the ALT+COMMAND into All Tangents mode.
 If the start and end points are close, they will stick together.
 ```
 
-- Attach mono curve renderer component to the mono curve game object to renderer curve in scene  if need.
-- Attach mono curve collider component to the mono curve game object if need.
-- Attach mono curve cacher component to the mono curve game object if need.
-- Evaluate point on the mono curve if need.
+- Attach mono curve renderer component to the mono curve game object to renderer curve in scene.
+
+- Evaluate point on the mono curve.
 
 ```C#
 //Evaluate point on the mono curve at length.
@@ -149,7 +133,7 @@ while (len < curve.Length)
     p0 = p1;
 }
 
-//Evaluate point on the mono curve at normalized time in the range[0,1].
+//Evaluate point on the mono curve at normalized time int the range[0,1].
 var t = 0f;
 var p0 = curve.EvaluateNormalized(t);
 while (t < 1.0f)
