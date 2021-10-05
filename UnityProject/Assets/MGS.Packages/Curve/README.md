@@ -31,7 +31,26 @@ public class MonoCurveLineRenderer : MonoCurveRenderer{}
 
 ## Technology
 
+### Check Rebuild
+
+```C#
+protected virtual void Awake() //I do not want to use Start.
+{
+    StartCoroutine(CheckRebuild());
+}
+protected virtual IEnumerator CheckRebuild()
+{
+    if (transform is RectTransform)
+    {
+        //Wait one frame to require the RectTransform is initialized (after Awake).
+        yield return null;
+    }
+    Rebuild();
+}
+```
+
 ### Transform
+
 
 ```C#
 //World to local position.
