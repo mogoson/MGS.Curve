@@ -97,7 +97,12 @@ return length;
 ## Usage
 
 - Attach mono curve component to a game object.
-- Adjust the args of curve component or edit curve in scene editor.
+
+```tex
+MonoHermiteCurve MonoBezierCurve MonoHelixCurve MonoEllipseCurve MonoSinCurve
+```
+
+- Adjust the parameters of curve component or edit curve in scene editor.
 
 ```tex
 Select the MonoBezierCurve and drag the handle to adjust the anchor to see effect.
@@ -116,9 +121,22 @@ Press and hold the ALT+COMMAND into All Tangents mode.
 If the start and end points are close, they will stick together.
 ```
 
-- Attach mono curve renderer component to the mono curve game object to renderer curve in scene.
+- Attach mono curve renderer component to the mono curve game object to renderer curve in scene  if need.
+```tex
+MonoCurveLineRenderer
+```
 
-- Evaluate point on the mono curve.
+- Attach mono curve collider component to the mono curve game object if need.
+```tex
+MonoCurveCapsuleCollider
+```
+
+- Attach mono curve cacher component to the mono curve game object if need.
+```tex
+MonoBezierCurveCacher MonoHermiteCurveCacher
+```
+
+- Evaluate point on the mono curve if need.
 
 ```C#
 //Evaluate point on the mono curve at length.
@@ -133,7 +151,7 @@ while (len < curve.Length)
     p0 = p1;
 }
 
-//Evaluate point on the mono curve at normalized time int the range[0,1].
+//Evaluate point on the mono curve at normalized time in the range[0,1].
 var t = 0f;
 var p0 = curve.EvaluateNormalized(t);
 while (t < 1.0f)

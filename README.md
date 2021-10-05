@@ -110,7 +110,12 @@ return length;
 ## Usage
 
 - Attach mono curve component to a game object.
-- Adjust the args of curve component or edit curve in scene editor.
+
+```tex
+MonoHermiteCurve MonoBezierCurve MonoHelixCurve MonoEllipseCurve MonoSinCurve
+```
+
+- Adjust the parameters of curve component or edit curve in scene editor.
 
 ```tex
 Select the MonoBezierCurve and drag the handle to adjust the anchor to see effect.
@@ -130,8 +135,20 @@ If the start and end points are close, they will stick together.
 ```
 
 - Attach mono curve renderer component to the mono curve game object to renderer curve in scene  if need.
+```tex
+MonoCurveLineRenderer
+```
+
 - Attach mono curve collider component to the mono curve game object if need.
+```tex
+MonoCurveCapsuleCollider
+```
+
 - Attach mono curve cacher component to the mono curve game object if need.
+```tex
+MonoBezierCurveCacher MonoHermiteCurveCacher
+```
+
 - Evaluate point on the mono curve if need.
 
 ```C#
