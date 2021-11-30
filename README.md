@@ -22,28 +22,6 @@
 - Create **Collider** to check trigger in scene.
 - Create **Cacher** to build curve to cache file and load curve from cache file.
 
-## Implemented
-
-```C#
-public abstract class MonoCurve : MonoBehaviour, IMonoCurve
-public class MonoSinCurve : MonoCurve{}
-public class MonoEllipseCurve : MonoCurve{}
-public class MonoHelixCurve : MonoCurve{}
-public class MonoBezierCurve : MonoCurve{}
-public class MonoHermiteCurve : MonoCurve{}
-
-public abstract class MonoCurveRenderer : MonoBehaviour, IMonoCurveRenderer{}
-public class MonoCurveLineRenderer : MonoCurveRenderer{}
-
-public abstract class MonoCurveCollider : MonoBehaviour, IMonoCurveCollider{}
-public class MonoCurveCapsuleCollider : MonoCurveCollider{}
-
-//Unity 5.3 or above.
-public abstract class MonoCurveCacher : MonoBehaviour, IMonoCurveCacher{}
-public class MonoBezierCurveCacher : MonoCurveCacher{}
-public class MonoHermiteCurveCacher : MonoCurveCacher{}
-```
-
 ## Technology
 
 ### Transform
