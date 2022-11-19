@@ -159,32 +159,6 @@ while (t < 1.0f)
 
 - Demos in the path "MGS.Packages/Curve/Demo/" provide reference to you.
 
-## Preview
-
-- MonoHermiteCurve
-
-![](.\Attachment\images\MonoHermiteCurveRendererEdit.PNG)
-
-![](.\Attachment\images\MonoHermiteCurveRenderer.PNG)
-
-- MonoBezierCurve
-
-![](.\Attachment\images\MonoBezierCurveCollider.PNG)
-
-![](.\Attachment\images\MonoBezierCurveRenderer.PNG)
-
-- MonoHermiteCurve
-
-![](./Attachment/images/MonoHermiteCurve.png)
-
-- MonoBezierCurve
-
-![](./Attachment/images/MonoBezierCurve.png)
-
-- MonoHelixCurve
-
-![](./Attachment/images/MonoHelixCurve.png)
-
 ------
 
 Copyright © 2021 Mogoson.	mogoson@outlook.com
