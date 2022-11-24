@@ -1,6 +1,6 @@
 [TOC]
 
-# MGS.MonoCurve
+# MGS.Curve
 
 ## Summary
 
