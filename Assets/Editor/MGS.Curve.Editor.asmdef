@@ -1,0 +1,17 @@
+{
+    "name": "MGS.Curve.Editor",
+    "rootNamespace": "",
+    "references": [
+        "MGS.Common.Editor",
+        "MGS.Curve"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
