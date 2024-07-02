@@ -29,15 +29,6 @@ namespace MGS.Curve
         }
 
         /// <summary>
-        /// [MESSAGE] On mono curve rebuild.
-        /// </summary>
-        /// <param name="curve"></param>
-        private void OnMonoCurveRebuild(IMonoCurve curve)
-        {
-            Rebuild(curve);
-        }
-
-        /// <summary>
         /// Rebuild extender base curve.
         /// </summary>
         /// <param name="curve"></param>

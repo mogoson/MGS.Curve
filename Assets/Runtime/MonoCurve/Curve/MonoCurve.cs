@@ -65,7 +65,11 @@ namespace MGS.Curve
         /// </summary>
         public virtual void Rebuild()
         {
-            SendMessage("OnMonoCurveRebuild", this, SendMessageOptions.DontRequireReceiver);
+            var extenders = GetComponents<IMonoCurveExtender>();
+            foreach (var extender in extenders)
+            {
+                extender.Rebuild(this);
+            }
         }
 
         /// <summary>
