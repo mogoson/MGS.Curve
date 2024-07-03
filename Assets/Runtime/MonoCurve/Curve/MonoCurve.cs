@@ -65,10 +65,24 @@ namespace MGS.Curve
         /// </summary>
         public virtual void Rebuild()
         {
-            var extenders = GetComponents<IMonoCurveExtender>();
-            foreach (var extender in extenders)
+            RebuildCurve();
+            NotifyListener();
+        }
+
+        /// <summary>
+        /// Rebuild mono curve.
+        /// </summary>
+        protected abstract void RebuildCurve();
+
+        /// <summary>
+        /// Notify listeners those on this gameobject.
+        /// </summary>
+        protected virtual void NotifyListener()
+        {
+            var listeners = GetComponents<IMonoCurveListener>();
+            foreach (var listener in listeners)
             {
-                extender.Rebuild(this);
+                listener.OnCurveRebuild(this);
             }
         }
 

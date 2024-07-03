@@ -39,7 +39,7 @@ namespace MGS.Curve.Editors
         protected virtual void OnInspectorChange()
         {
             Target.Segment = Mathf.Max(Target.Segment, 1E-3F);
-            Target.Rebuild(Target.GetComponent<IMonoCurve>());
+            Target.OnCurveRebuild(Target.GetComponent<IMonoCurve>());
         }
     }
 }

@@ -85,10 +85,10 @@ namespace MGS.Curve
         }
 
         /// <summary>
-        /// Rebuild collider base curve.
+        /// Event on curve rebuild.
         /// </summary>
-        /// <param name="curve"></param>
-        public override void Rebuild(IMonoCurve curve)
+        /// <param name="curve">The target curve.</param>
+        public override void OnCurveRebuild(IMonoCurve curve)
         {
             if (curve == null || curve.Length == 0)
             {

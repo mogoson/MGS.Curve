@@ -82,7 +82,7 @@ namespace MGS.Curve
         /// <summary>
         /// Rebuild mono curve.
         /// </summary>
-        public override void Rebuild()
+        protected override void RebuildCurve()
         {
             var anchorFr = from;
             anchorFr.tangent += anchorFr.point;
@@ -93,7 +93,6 @@ namespace MGS.Curve
             curve.to = anchorTo;
 
             length = EvaluateLength();
-            base.Rebuild();
         }
 
         /// <summary>

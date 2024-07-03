@@ -62,14 +62,13 @@ namespace MGS.Curve
         /// <summary>
         /// Rebuild mono curve.
         /// </summary>
-        public override void Rebuild()
+        protected override void RebuildCurve()
         {
             curve.from = from;
             curve.to = to;
             curve.altitude = altitude;
             curve.radian = radian;
             length = EvaluateLength();
-            base.Rebuild();
         }
     }
 }

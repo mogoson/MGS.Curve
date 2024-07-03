@@ -52,11 +52,10 @@ namespace MGS.Curve
         /// <summary>
         /// Rebuild mono curve.
         /// </summary>
-        public override void Rebuild()
+        protected override void RebuildCurve()
         {
             curve.args = args;
             length = EvaluateLength();
-            base.Rebuild();
         }
 
         /// <summary>

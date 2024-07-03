@@ -9,7 +9,7 @@
  *  Date         :  9/17/2021
  *  DeTargetion  :  Initial development version.
  *************************************************************************/
- 
+
 using UnityEditor;
 using UnityEngine;
 
@@ -47,7 +47,7 @@ namespace MGS.Curve.Editors
         {
             if (Target.enabled != enabled)
             {
-                Target.Rebuild(Target.GetComponent<IMonoCurve>());
+                Target.OnCurveRebuild(Target.GetComponent<IMonoCurve>());
                 enabled = Target.enabled;
             }
         }
@@ -56,7 +56,7 @@ namespace MGS.Curve.Editors
         {
             Target.Segment = Mathf.Max(Target.Segment, 1E-3F);
             Target.Radius = Mathf.Max(Target.Radius, 1E-3F);
-            Target.Rebuild(Target.GetComponent<IMonoCurve>());
+            Target.OnCurveRebuild(Target.GetComponent<IMonoCurve>());
         }
     }
 }

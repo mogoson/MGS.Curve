@@ -15,12 +15,5 @@ namespace MGS.Curve
     /// <summary>
     /// Interface of extender that base on mono curve.
     /// </summary>
-    public interface IMonoCurveExtender
-    {
-        /// <summary>
-        /// Rebuild extender base mono curve.
-        /// </summary>
-        /// <param name="curve"></param>
-        void Rebuild(IMonoCurve curve);
-    }
+    public interface IMonoCurveExtender : IMonoCurveListener { }
 }

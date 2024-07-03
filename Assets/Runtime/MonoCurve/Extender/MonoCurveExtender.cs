@@ -25,13 +25,13 @@ namespace MGS.Curve
         /// </summary>
         protected virtual void Reset()
         {
-            Rebuild(GetComponent<IMonoCurve>());
+            OnCurveRebuild(GetComponent<IMonoCurve>());
         }
 
         /// <summary>
-        /// Rebuild extender base curve.
+        /// Event on curve rebuild.
         /// </summary>
-        /// <param name="curve"></param>
-        public abstract void Rebuild(IMonoCurve curve);
+        /// <param name="curve">The target curve.</param>
+        public abstract void OnCurveRebuild(IMonoCurve curve);
     }
 }
