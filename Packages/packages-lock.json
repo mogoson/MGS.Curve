@@ -1,12 +1,5 @@
 {
   "dependencies": {
-    "com.mgs.common": {
-      "version": "https://github.com/mogoson/MGS.Common.git?path=/Assets",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "30eed4f4595351574ec554b23e540e8f6dc6fcc5"
-    },
     "com.unity.collab-proxy": {
       "version": "2.3.1",
       "depth": 0,

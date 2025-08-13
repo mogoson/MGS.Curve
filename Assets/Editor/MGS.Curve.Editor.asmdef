@@ -2,7 +2,6 @@
     "name": "MGS.Curve.Editor",
     "rootNamespace": "",
     "references": [
-        "MGS.Common.Editor",
         "MGS.Curve"
     ],
     "includePlatforms": [],

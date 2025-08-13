@@ -9,11 +9,13 @@
 ## Platform
 
 - Windows
+- Android
+- IOS
 
 ## Environment
 
 - .Net Framework 3.5 or above.
-- Unity 5.0 or above.
+- Unity 2021.3 or above.
 
 ## Demand
 
@@ -66,4 +68,4 @@ MonoBezierCurveCacher MonoHermiteCurveCacher
 
 ------
 
-Copyright © 2021 Mogoson.	mogoson@outlook.com
+Copyright © 2025 Mogoson.	mogoson@outlook.com
