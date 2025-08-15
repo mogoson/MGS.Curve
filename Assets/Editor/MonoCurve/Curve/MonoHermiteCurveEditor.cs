@@ -337,7 +337,7 @@ namespace MGS.Curve.Editors
             {
                 return EditMode.Anchor;
             }
-            else if (Event.current.alt)
+            else if (Event.current.command)
             {
                 return EditMode.Tangent;
             }
@@ -355,7 +355,7 @@ namespace MGS.Curve.Editors
 
         protected virtual TangentMode CheckTangentMode()
         {
-            if (Event.current.command)
+            if (Event.current.capsLock)
             {
                 return TangentMode.Multi;
             }

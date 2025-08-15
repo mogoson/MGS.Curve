@@ -93,7 +93,7 @@ namespace MGS.Curve.Editors
 
         protected virtual EditMode CheckEditMode()
         {
-            if (Event.current.alt)
+            if (Event.current.command)
             {
                 return EditMode.Tangent;
             }

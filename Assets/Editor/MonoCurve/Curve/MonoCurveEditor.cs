@@ -29,7 +29,7 @@ namespace MGS.Curve.Editors
         protected readonly Color SelectColor = Color.blue;
         protected readonly Color DeleteColor = Color.red;
         protected readonly Color TangentColor = Color.cyan;
-        protected readonly Color SeparateColor = Color.green;
+        protected readonly Color SeparateColor = Color.magenta;
 
         protected virtual void OnEnable()
         {
@@ -90,7 +90,7 @@ namespace MGS.Curve.Editors
 
         protected virtual string CollectCaption()
         {
-            return string.Format("Length: {0}", Target.Length.ToString("f2"));
+            return string.Format("Length: {0}", Target.Length);
         }
 
         protected virtual void OnInspectorChanged()
