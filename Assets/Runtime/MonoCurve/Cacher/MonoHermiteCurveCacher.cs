@@ -12,7 +12,7 @@
 
 using System;
 using System.Collections.Generic;
-using Newtonsoft.Json;
+using Unity.Plastic.Newtonsoft.Json;
 using UnityEngine;
 
 namespace MGS.Curve
@@ -44,7 +44,11 @@ namespace MGS.Curve
         /// <returns></returns>
         protected override string SerializeCurve()
         {
-            return JsonConvert.SerializeObject(curve.anchors);
+            var settings = new JsonSerializerSettings
+            {
+                ContractResolver = new FieldContractResolver()
+            };
+            return JsonConvert.SerializeObject(curve.anchors, settings);
         }
 
         /// <summary>

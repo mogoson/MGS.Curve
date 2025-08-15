@@ -9,8 +9,9 @@
  *  Date         :  9/17/2021
  *  DeTargetion  :  Initial development version.
  *************************************************************************/
- 
+
 using UnityEditor;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 namespace MGS.Curve.Editors
@@ -48,12 +49,25 @@ namespace MGS.Curve.Editors
 
                 if (!string.IsNullOrEmpty(cacheFile))
                 {
-                    Target.Load(cacheFile);
+                    if (Target.Load(cacheFile))
+                    {
+                        MarkSceneDirty();
+                    }
                 }
             }
 
             GUILayout.FlexibleSpace();
             EditorGUILayout.EndHorizontal();
+        }
+
+        protected void MarkSceneDirty()
+        {
+#if UNITY_5_3_OR_NEWER
+            var scene = EditorSceneManager.GetActiveScene();
+            EditorSceneManager.MarkSceneDirty(scene);
+#else
+            EditorApplication.MarkSceneDirty();
+#endif
         }
     }
 }

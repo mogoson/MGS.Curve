@@ -68,7 +68,8 @@ namespace MGS.Curve.Editors
         protected void MarkSceneDirty()
         {
 #if UNITY_5_3_OR_NEWER
-            EditorSceneManager.MarkAllScenesDirty();
+            var scene = EditorSceneManager.GetActiveScene();
+            EditorSceneManager.MarkSceneDirty(scene);
 #else
             EditorApplication.MarkSceneDirty();
 #endif

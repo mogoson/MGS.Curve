@@ -45,7 +45,11 @@ namespace MGS.Curve
         protected override string SerializeCurve()
         {
             var anchors = new List<BezierAnchor>() { curve.from, curve.to };
-            return JsonConvert.SerializeObject(anchors);
+            var settings = new JsonSerializerSettings
+            {
+                ContractResolver = new FieldContractResolver()
+            };
+            return JsonConvert.SerializeObject(anchors, settings);
         }
 
         /// <summary>
