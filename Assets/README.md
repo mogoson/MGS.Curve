@@ -36,18 +36,18 @@ MonoHermiteCurve MonoBezierCurve MonoHelixCurve MonoEllipseCurve MonoSinCurve
 
 ```tex
 Select the MonoBezierCurve and drag the handle to adjust the anchor to see effect.
-Press and hold the ALT into Tangent Edit mode, drag the handle to adjust the tangent of anchor.
+Press and hold the COMMAND into Tangent Edit mode, drag the handle to adjust the tangent of anchor.
 If the start and end points are close, they will stick together.
 
 Select the MonoHermiteCurve and drag the handle to adjust the anchor to see effect.
 Press and hold the CTRL, click the green handle to add a new anchor.
 Press and hold the CTRL+SHIFT, click the red handle to remove a anchor.
 If do not use Auto Smooth,
-Press and hold the ALT, click the blue handle to open Tangent editor and drag the
+Press and hold the COMMAND, click the blue handle to open Tangent editor and drag the
  cyan handle to adjust the tangent of anchor; on this mode, Press and hold the SHIFT
- to open In and Out tangent editor, drag the cyan and green handle to adjust the
+ to open In and Out tangent editor, drag the cyan and magenta handle to adjust the
  tangents of anchor.
-Press and hold the ALT+COMMAND into All Tangents mode.
+Press and hold the COMMAND+CAPSLOCK into All Tangents mode.
 If the start and end points are close, they will stick together.
 ```
 
