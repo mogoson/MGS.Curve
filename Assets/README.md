@@ -6,11 +6,7 @@
 
 - Smooth 3D curve component for Unity project develop.
 
-## Environment
-
-- Unity 2021.3 or above.
-
-## Demand
+## Ability
 
 - Create smooth **Curve** in 3D space.
 - Create **Renderer** to show curve in scene.
