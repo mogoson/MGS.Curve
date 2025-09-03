@@ -20,6 +20,7 @@ namespace MGS.Curve
     /// <summary>
     /// Cacher for mono bezier curve.
     /// </summary>
+    [AddComponentMenu("MGS/Curve/MonoBezierCurveCacher")]
     [RequireComponent(typeof(MonoBezierCurve))]
     public class MonoBezierCurveCacher : MonoCurveCacher
     {

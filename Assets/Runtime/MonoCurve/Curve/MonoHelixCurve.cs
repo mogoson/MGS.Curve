@@ -17,6 +17,7 @@ namespace MGS.Curve
     /// <summary>
     /// Mono curve base on helix curve.
     /// </summary>
+    [AddComponentMenu("MGS/Curve/MonoHelixCurve")]
     public class MonoHelixCurve : MonoCurve
     {
         /// <summary>

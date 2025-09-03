@@ -19,6 +19,7 @@ namespace MGS.Curve
     /// <summary>
     /// Mono curve base on anchors.
     /// </summary>
+    [AddComponentMenu("MGS/Curve/MonoHermiteCurve")]
     public class MonoHermiteCurve : MonoCurve
     {
         /// <summary>

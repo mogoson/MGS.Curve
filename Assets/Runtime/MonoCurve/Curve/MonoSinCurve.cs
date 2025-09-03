@@ -17,6 +17,7 @@ namespace MGS.Curve
     /// <summary>
     /// Mono curve base on sin curve.
     /// </summary>
+    [AddComponentMenu("MGS/Curve/MonoSinCurve")]
     public class MonoSinCurve : MonoCurve
     {
         /// <summary>

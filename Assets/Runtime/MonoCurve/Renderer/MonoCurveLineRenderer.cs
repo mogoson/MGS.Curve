@@ -17,6 +17,7 @@ namespace MGS.Curve
     /// <summary>
     /// Line renderer for mono curve.
     /// </summary>
+    [AddComponentMenu("MGS/Curve/MonoCurveLineRenderer")]
     [RequireComponent(typeof(LineRenderer))]
     public class MonoCurveLineRenderer : MonoCurveRenderer
     {
