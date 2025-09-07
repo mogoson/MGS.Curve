@@ -13,7 +13,15 @@
 - Create **Collider** to check trigger in scene.
 - Create **Cacher** to build curve to cache file and load curve from cache file.
 
-## Usage
+## Install
+
+- Unity --> Window --> Package Manager --> "+" --> Add package from git URL...
+
+  ```text
+  https://github.com/mogoson/MGS.Curve.git?path=/Assets
+  ```
+
+# Usage
 
 - Attach mono curve component to a game object.
 
