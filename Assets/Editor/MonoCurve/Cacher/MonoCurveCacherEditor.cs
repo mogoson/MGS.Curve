@@ -38,7 +38,10 @@ namespace MGS.Curve.Editors
 
                 if (!string.IsNullOrEmpty(cacheFile))
                 {
-                    Target.Build(cacheFile);
+                    if (Target.Build(cacheFile))
+                    {
+                        Debug.Log($"Build curve to cache file: {cacheFile}");
+                    }
                 }
             }
 
@@ -52,6 +55,7 @@ namespace MGS.Curve.Editors
                     if (Target.Load(cacheFile))
                     {
                         MarkSceneDirty();
+                        Debug.Log($"Load curve from cache file: {cacheFile}");
                     }
                 }
             }
