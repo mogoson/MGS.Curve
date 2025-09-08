@@ -63,6 +63,10 @@ MonoCurveCapsuleCollider
 MonoBezierCurveCacher MonoHermiteCurveCacher
 ```
 
+## Samples
+
+- Unity --> Window --> Package Manager --> Packages-Mogoson --> Curve  --> Samples.
+
 ------
 
 Copyright © 2025 Mogoson.	mogoson@outlook.com
