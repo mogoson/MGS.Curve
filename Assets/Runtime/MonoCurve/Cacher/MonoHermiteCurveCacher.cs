@@ -20,7 +20,7 @@ namespace MGS.Curve
     /// <summary>
     /// Cacher for mono hermite curve.
     /// </summary>
-    [AddComponentMenu("MGS/Curve/MonoHermiteCurveCacher")]
+    [AddComponentMenu("MGS/Curve/Mono Hermite Curve Cacher")]
     [RequireComponent(typeof(MonoHermiteCurve))]
     public class MonoHermiteCurveCacher : MonoCurveCacher
     {

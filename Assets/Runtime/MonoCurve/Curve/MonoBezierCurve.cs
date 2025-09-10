@@ -17,7 +17,7 @@ namespace MGS.Curve
     /// <summary>
     /// Mono curve base on cubic bezier curve.
     /// </summary>
-    [AddComponentMenu("MGS/Curve/MonoBezierCurve")]
+    [AddComponentMenu("MGS/Curve/Mono Bezier Curve")]
     public class MonoBezierCurve : MonoCurve
     {
         /// <summary>
