@@ -1,7 +1,7 @@
 ﻿/*************************************************************************
  *  Copyright © 2025 Mogoson. All rights reserved.
  *------------------------------------------------------------------------
- *  File         :  FieldContractResolver.cs
+ *  File         :  FieldOnlyContractResolver.cs
  *  Description  :  Contract resolver for field.
  *------------------------------------------------------------------------
  *  Author       :  Mogoson
@@ -17,9 +17,9 @@ using Newtonsoft.Json.Serialization;
 namespace MGS.Curve
 {
     /// <summary>
-    /// Contract resolver for field.
+    /// Contract resolver for field only.
     /// </summary>
-    public class FieldContractResolver : DefaultContractResolver
+    public class FieldOnlyContractResolver : DefaultContractResolver
     {
         /// <summary>
         /// Create json Property only for field.

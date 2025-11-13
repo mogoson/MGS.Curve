@@ -47,7 +47,7 @@ namespace MGS.Curve
         {
             var settings = new JsonSerializerSettings
             {
-                ContractResolver = new FieldContractResolver()
+                ContractResolver = new FieldOnlyContractResolver()
             };
             return JsonConvert.SerializeObject(curve.anchors, settings);
         }

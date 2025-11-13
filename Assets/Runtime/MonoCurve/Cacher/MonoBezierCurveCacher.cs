@@ -48,7 +48,7 @@ namespace MGS.Curve
             var anchors = new List<BezierAnchor>() { curve.from, curve.to };
             var settings = new JsonSerializerSettings
             {
-                ContractResolver = new FieldContractResolver()
+                ContractResolver = new FieldOnlyContractResolver()
             };
             return JsonConvert.SerializeObject(anchors, settings);
         }
