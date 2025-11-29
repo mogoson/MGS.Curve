@@ -21,13 +21,13 @@ namespace MGS.Curve
     public sealed class MonoCurveUtility
     {
         /// <summary>
-        /// Get segment count of mono curve.
+        /// Calculate segment count and piece for mono curve.
         /// </summary>
         /// <param name="curve"></param>
         /// <param name="segment"></param>
         /// <param name="piece"></param>
         /// <returns>Detail count of mono curve.</returns>
-        public static int GetSegmentCount(IMonoCurve curve, float segment, out float piece)
+        public static int CalculateSegment(IMonoCurve curve, float segment, out float piece)
         {
             //AwayFromZero means that 12.5 -> 13
             var count = (int)Math.Round(curve.Length / segment, MidpointRounding.AwayFromZero);

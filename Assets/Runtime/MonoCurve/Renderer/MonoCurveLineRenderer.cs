@@ -57,7 +57,7 @@ namespace MGS.Curve
             }
 
             var piece = 0f;
-            Segments = MonoCurveUtility.GetSegmentCount(curve, segment, out piece) + 1;
+            Segments = MonoCurveUtility.CalculateSegment(curve, segment, out piece) + 1;
             SetVertexCount(lineRenderer, Segments);
             for (int i = 0; i < Segments; i++)
             {

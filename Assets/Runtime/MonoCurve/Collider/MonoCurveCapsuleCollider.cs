@@ -55,7 +55,7 @@ namespace MGS.Curve
         protected override void RebuildCollider(IMonoCurve curve)
         {
             var piece = 0f;
-            Segments = MonoCurveUtility.GetSegmentCount(curve, segment, out piece);
+            Segments = MonoCurveUtility.CalculateSegment(curve, segment, out piece);
             RequireCapsules(Segments);
             SetCapsules(curve, Segments, piece);
         }
