@@ -76,7 +76,7 @@ namespace MGS.Curve
             }
             catch (Exception ex)
             {
-                Debug.LogErrorFormat("{0}\r\n{1}", ex.Message, ex.StackTrace);
+                Debug.LogException(ex);
                 return false;
             }
         }
