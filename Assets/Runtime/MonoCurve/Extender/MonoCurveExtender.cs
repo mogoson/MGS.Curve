@@ -1,5 +1,5 @@
 ﻿/*************************************************************************
- *  Copyright © 2021 Mogoson. All rights reserved.
+ *  Copyright © 2025 Mogoson. All rights reserved.
  *------------------------------------------------------------------------
  *  File         :  MonoCurveExtender.cs
  *  Description  :  Extender that base on mono curve.
@@ -18,7 +18,7 @@ namespace MGS.Curve
     /// Extender for mono curve.
     /// </summary>
     [ExecuteInEditMode]
-    public abstract class MonoCurveExtender : MonoBehaviour, IMonoCurveExtender
+    public abstract class MonoCurveExtender : MonoCurveListener, IMonoCurveExtender
     {
         /// <summary>
         /// Reset component.
@@ -27,11 +27,5 @@ namespace MGS.Curve
         {
             OnCurveRebuild(GetComponent<IMonoCurve>());
         }
-
-        /// <summary>
-        /// Event on curve rebuild.
-        /// </summary>
-        /// <param name="curve">The target curve.</param>
-        public abstract void OnCurveRebuild(IMonoCurve curve);
     }
 }

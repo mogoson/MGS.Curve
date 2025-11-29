@@ -1,5 +1,5 @@
 ﻿/*************************************************************************
- *  Copyright © 2021 Mogoson. All rights reserved.
+ *  Copyright © 2025 Mogoson. All rights reserved.
  *------------------------------------------------------------------------
  *  File         :  MonoCurveEditor.cs
  *  DeTargetion  :  Editor for MonoCurve.
@@ -91,7 +91,7 @@ namespace MGS.Curve.Editors
 
         protected virtual string CollectCaption()
         {
-            return string.Format("Length: {0}", Target.Length);
+            return $"Length: {Target.Length}";
         }
 
         protected virtual void OnInspectorChanged()

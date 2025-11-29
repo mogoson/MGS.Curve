@@ -10,17 +10,19 @@
  *  Description  :  Initial development version.
  *************************************************************************/
 
+using UnityEngine;
+
 namespace MGS.Curve
 {
     /// <summary>
     /// Listener for mono curve.
     /// </summary>
-    public interface IMonoCurveListener
+    public abstract class MonoCurveListener : MonoBehaviour, IMonoCurveListener
     {
         /// <summary>
         /// Event on curve rebuild.
         /// </summary>
         /// <param name="curve">The target curve.</param>
-        void OnCurveRebuild(IMonoCurve curve);
+        public abstract void OnCurveRebuild(IMonoCurve curve);
     }
 }

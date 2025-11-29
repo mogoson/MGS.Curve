@@ -1,5 +1,5 @@
 ﻿/*************************************************************************
- *  Copyright © 2021 Mogoson. All rights reserved.
+ *  Copyright © 2025 Mogoson. All rights reserved.
  *------------------------------------------------------------------------
  *  File         :  MonoHermiteCurveEditor.cs
  *  DeTargetion  :  Editor for MonoHermiteCurve.
@@ -42,7 +42,7 @@ namespace MGS.Curve.Editors
 
         protected override string CollectCaption()
         {
-            return string.Format("{0}  Anchors: {1}", base.CollectCaption(), Target.AnchorsCount);
+            return $"{base.CollectCaption()} Anchors: {Target.AnchorsCount}";
         }
 
         protected override void OnInspectorChanged()

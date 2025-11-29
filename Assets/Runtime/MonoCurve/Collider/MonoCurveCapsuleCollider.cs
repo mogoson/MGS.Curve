@@ -1,5 +1,5 @@
 ﻿/*************************************************************************
- *  Copyright © 2021 Mogoson. All rights reserved.
+ *  Copyright © 2025 Mogoson. All rights reserved.
  *------------------------------------------------------------------------
  *  File         :  MonoCurveCollider.cs
  *  Description  :  Capsule collider for mono curve.
@@ -32,7 +32,7 @@ namespace MGS.Curve
         /// </summary>
         protected override void Reset()
         {
-            var groupName = string.Format("Collider{0}", GetInstanceID());
+            var groupName = $"Collider{GetInstanceID()}";
             colliderGroup = transform.Find(groupName);
             if (colliderGroup == null)
             {
@@ -108,7 +108,7 @@ namespace MGS.Curve
             var childCount = colliderGroup.childCount;
             while (childCount < count)
             {
-                var name = string.Format("Collider {0}", childCount);
+                var name = $"Collider {childCount}";
                 var newCollider = new GameObject(name, typeof(CapsuleCollider));
                 newCollider.transform.parent = colliderGroup;
                 childCount++;

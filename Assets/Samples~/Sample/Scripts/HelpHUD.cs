@@ -1,5 +1,5 @@
 /*************************************************************************
- *  Copyright © 2021 Mogoson. All rights reserved.
+ *  Copyright © 2025 Mogoson. All rights reserved.
  *------------------------------------------------------------------------
  *  File         :  HelpHUD.cs
  *  Description  :  Draw help HUD in scene.
@@ -20,7 +20,7 @@ namespace MGS.Curve.Sample
         #region Field and Property
         [Multiline]
         public string info = "Help info.";
-        public Color color = Color.black;
+        public Color color = Color.cyan;
 
         public float top = 10;
         public float left = 10;

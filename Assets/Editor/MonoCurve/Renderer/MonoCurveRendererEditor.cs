@@ -1,5 +1,5 @@
 ﻿/*************************************************************************
- *  Copyright © 2021 Mogoson. All rights reserved.
+ *  Copyright © 2025 Mogoson. All rights reserved.
  *------------------------------------------------------------------------
  *  File         :  MonoCurveEditor.cs
  *  DeTargetion  :  Editor for MonoCurveRenderer.
@@ -33,7 +33,7 @@ namespace MGS.Curve.Editors
 
         protected virtual void DrawCaptionInspector()
         {
-            EditorGUILayout.HelpBox(string.Format("Segments: {0}", Target.Segments), MessageType.Info);
+            EditorGUILayout.HelpBox($"Segments: {Target.Segments}", MessageType.Info);
         }
 
         protected virtual void OnInspectorChange()
