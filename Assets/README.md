@@ -22,12 +22,6 @@
   https://github.com/mogoson/MGS.Curve.git?path=/Assets
   ```
 
-- Unity --> Window --> Package Manager --> "Packages: Unity Registry"
-
-  ```tex
-  Newtonsoft Json
-  ```
-
 # Usage
 
 - Attach mono curve component to a game object.
