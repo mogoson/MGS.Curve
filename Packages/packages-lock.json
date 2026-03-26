@@ -7,6 +7,13 @@
       "dependencies": {},
       "hash": "ed95bae14cfe19690d6548832e5ddbf5ce47ed69"
     },
+    "com.mgs.scriptdiemaker": {
+      "version": "https://github.com/mogoson/MGS.ScriptDiemaker.git?path=/Assets",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "8c2ac8e6d9dde9a5b371e4bfba40bf1875e5ba26"
+    },
     "com.unity.collab-proxy": {
       "version": "2.3.1",
       "depth": 0,

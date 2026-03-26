@@ -54,8 +54,7 @@ namespace MGS.Curve
         /// </summary>
         protected override void RebuildCollider(IMonoCurve curve)
         {
-            var piece = 0f;
-            Segments = MonoCurveUtility.CalculateSegment(curve, segment, out piece);
+            Segments = MonoCurveUtility.CalculateSegment(curve, segment, out float piece);
             RequireCapsules(Segments);
             SetCapsules(curve, Segments, piece);
         }
@@ -108,9 +107,7 @@ namespace MGS.Curve
             var childCount = colliderGroup.childCount;
             while (childCount < count)
             {
-                var name = $"Collider {childCount}";
-                var newCollider = new GameObject(name, typeof(CapsuleCollider));
-                newCollider.transform.parent = colliderGroup;
+                CreateCapsule($"Collider {childCount}", colliderGroup);
                 childCount++;
             }
             while (childCount > count)
@@ -118,6 +115,19 @@ namespace MGS.Curve
                 Destroy(colliderGroup.GetChild(childCount - 1).gameObject);
                 childCount--;
             }
+        }
+
+        /// <summary>
+        /// Create capsule collider.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="parent"></param>
+        /// <returns></returns>
+        protected virtual CapsuleCollider CreateCapsule(string name, Transform parent)
+        {
+            var capsule = new GameObject(name);
+            capsule.transform.parent = parent;
+            return capsule.AddComponent<CapsuleCollider>();
         }
 
         /// <summary>
